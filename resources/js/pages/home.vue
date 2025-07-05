@@ -1,10 +1,7 @@
 <template>
 	<navigation>
 			<section class="relative pt-24 min-h-screen flex items-center justify-center text-center px-4">
-			<!-- Background Image -->
 			<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg-print.jpg');"></div>
-
-			<!-- Green Overlay -->
 			<div class="absolute inset-0 bg-[#86906C] bg-opacity-90"></div>
 
 			<!-- Content -->
