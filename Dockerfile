@@ -1,11 +1,11 @@
 FROM php:8.2-fpm
 
-# Install system dependencies and Node.js
+# Install system dependencies and Node.js 22
 RUN apt-get update && apt-get install -y \
     git curl zip unzip gnupg2 ca-certificates lsb-release \
     libonig-dev libxml2-dev libzip-dev libpng-dev \
     && docker-php-ext-install pdo_mysql mbstring zip exif pcntl \
-    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
     && apt-get install -y nodejs
 
 # Install Composer
