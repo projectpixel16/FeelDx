@@ -1,8 +1,8 @@
 <template>
 	<navigation>
 			<section class="relative pt-24 min-h-screen flex items-center justify-center text-center px-4">
-			<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg-print.jpg');"></div>
-			<div class="absolute inset-0 bg-[#86906C] bg-opacity-90"></div>
+			<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/images/works5.jpg');"></div>
+			<div class="absolute inset-0 bg-[#86906C] bg-opacity-70"></div>
 
 			<!-- Content -->
 			<div class="relative z-10 text-white max-w-3xl">
@@ -11,7 +11,7 @@
 				<p class="text-xl mb-6">
 				Immersive, story-driven planning and visualisation for forward-thinking construction teams.
 				</p>
-				<button class="bg-white text-[#86906C] px-6 py-3 rounded-lg hover:opacity-90 transition">
+				<button class="bg-white text-[#86906C] px-6 py-3 rounded-lg hover:bg-[#86906C] hover:text-white transition">
 				Get Started
 				</button>
 			</div>

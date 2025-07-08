@@ -46,32 +46,39 @@ onBeforeUnmount(() => {
 
 				<!-- Desktop Menu -->
 				<nav class="space-x-6 hidden md:flex">
-					<router-link to="/" :class="[ 'text-sm',isScrolled ? 'hover:text-[#1F2023] hover:font-bold' : 'hover:text-[#1F2023] hover:font-bold' ]">Home</router-link>
-					<router-link to="/about" :class="[ 'text-sm',isScrolled ? 'hover:text-[#1F2023] hover:font-bold' : 'hover:text-[#1F2023] hover:font-bold' ]">About</router-link>
-					<router-link to="/services" :class="[ 'text-sm',isScrolled ? 'hover:text-[#1F2023] hover:font-bold' : 'hover:text-[#1F2023] hover:font-bold' ]">Services</router-link>
-					<router-link to="/contact" :class="[ 'text-sm',isScrolled ? 'hover:text-[#1F2023] hover:font-bold' : 'hover:text-[#1F2023] hover:font-bold' ]">Contact</router-link>
+					<router-link to="/" :class="[ 'text-sm',isScrolled ? 'hover:text-[#1F2023]' : 'hover:text-[#1F2023]' ]">Home</router-link>
+					<router-link to="/about" :class="[ 'text-sm',isScrolled ? 'hover:text-[#1F2023]' : 'hover:text-[#1F2023]' ]">About</router-link>
+					<router-link to="/services" :class="[ 'text-sm',isScrolled ? 'hover:text-[#1F2023]' : 'hover:text-[#1F2023]' ]">Services</router-link>
+					<router-link to="/contact" :class="[ 'text-sm',isScrolled ? 'hover:text-[#1F2023]' : 'hover:text-[#1F2023]' ]">Contact</router-link>
 				</nav>
 
-				<!-- Mobile Toggle Button -->
 				<button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path :class="{ 'hidden': mobileMenuOpen, 'block': !mobileMenuOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+					<svg xmlns="http://www.w3.org/2000/svg" :class="['w-6 h-6', isScrolled ? 'text-[#86906C]' : 'text-white']" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path :class="{ 'hidden': mobileMenuOpen, 'block': !mobileMenuOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 						d="M4 6h16M4 12h16M4 18h16" />
-					<path :class="{ 'block': mobileMenuOpen, 'hidden': !mobileMenuOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+						<path :class="{ 'block': mobileMenuOpen, 'hidden': !mobileMenuOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 						d="M6 18L18 6M6 6l12 12" />
 					</svg>
 				</button>
 			</div>
 
-			<!-- Mobile Menu -->
-			<div v-if="mobileMenuOpen" class="md:hidden bg-black/70 backdrop-blur-lg px-4 pb-4">
-			<nav class="flex flex-col space-y-2">
-				<a href="#" class="block py-2 text-white hover:text-[#86906C]">Home</a>
-				<a href="#" class="block py-2 text-white hover:text-[#86906C]">About</a>
-				<a href="#" class="block py-2 text-white hover:text-[#86906C]">Services</a>
-				<a href="#" class="block py-2 text-white hover:text-[#86906C]">Contact</a>
-			</nav>
+			<transition
+			enter-active-class="transition duration-300 ease-out"
+			enter-from-class="opacity-0 -translate-y-2"
+			enter-to-class="opacity-100 translate-y-0"
+			leave-active-class="transition duration-200 ease-in"
+			leave-from-class="opacity-100 translate-y-0"
+			leave-to-class="opacity-0 -translate-y-2"
+			>
+			<div v-if="mobileMenuOpen" :class="['md:hidden px-4 pb-4', isScrolled ? 'bg-white' : 'bg-black/70 backdrop-blur-lg']">
+				<nav class="flex flex-col space-y-2">
+				<router-link to="/" class="block py-2 hover:text-[#1F2023]">Home</router-link>
+				<router-link to="/about" class="block py-2 hover:text-[#1F2023]">About</router-link>
+				<router-link to="/services" class="block py-2 hover:text-[#1F2023]">Services</router-link>
+				<router-link to="/contact" class="block py-2 hover:text-[#1F2023]">Contact</router-link>
+				</nav>
 			</div>
+			</transition>
 		</header>
 		<slot/>
 	</div>
