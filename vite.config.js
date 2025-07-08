@@ -11,6 +11,6 @@ export default defineConfig({
     vue(),
   ],
   base: process.env.APP_ENV === 'production'
-    ? 'https://feeldx.onrender.com/build/' // ✅ correct in production
+    ? 'https://feeldx.onrender.com/build/'
     : '/build/',
 });
